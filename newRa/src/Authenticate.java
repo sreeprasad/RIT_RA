@@ -22,19 +22,24 @@ public class Authenticate {
 			/* get client */ 
 			HttpClient client = new DefaultHttpClient();
 			/* url to logg in */
-			HttpPost post = new HttpPost("https://albert.rit.edu/patroninfo");
+			HttpPost post = new HttpPost("https://albert.rit.edu/patroninfo~S3/1147900/top");
 			try {
 				/* get the user name and password to store in list */
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
 				/* adding username */
 				nameValuePairs
-						.add(new BasicNameValuePair("username", "REPLACE_WITH_USERNAME"));
+						.add(new BasicNameValuePair("name", "REPLACE_WITH_NAME"));
 				/* adding password */
-				nameValuePairs.add(new BasicNameValuePair("password",
-						"REPLACE_WITH_PASSWORD"));
+				nameValuePairs.add(new BasicNameValuePair("code",
+						"REPLACE_WITH_CODE"));
+				nameValuePairs.add(new BasicNameValuePair("pin",
+						"REPLACE_WITH_PIN"));
 				post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 				/* execute */
 				HttpResponse response = client.execute(post);
+				
+				System.out.println("response is :");
+				System.out.println(response.toString());
 				/* get content */
 				BufferedReader rd = new BufferedReader(new InputStreamReader(
 						response.getEntity().getContent()));
