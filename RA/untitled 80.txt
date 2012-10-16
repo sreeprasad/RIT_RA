@@ -1,0 +1,45 @@
+ 
+select category from page where docid = 'D002' and pageid ='P002';
+
+select empdesig from employee where empid='E001';
+
+(select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))
+
+---
+
+
+ (select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))
+
+
+
+select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"yes","no"   )
+
+
+---
+select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"yes","no")
+
+select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"five",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=4),"four", (select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=2),"two",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=1),"one",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=0),"zero","no")))))))))))))  
+ 
+
+(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"five",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=4),"four", (select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=2),"two",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=1),"one",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=0),"zero","no"))))))))))))) )
+
+
+
+
+(select category from page where docid='D001' and pageid='P001');
+
+(select mod ((select category from page where docid='D001' and pageid='P001'),(select id5 from staticCategory)))
+
+ 
+ select if ((select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"five",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=4),"four", (select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=2),"two",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=1),"one",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=0),"zero","no"))))))))))))) )=(select mod ((select category from page where docid='D001' and pageid='P001'),(select id5 from staticCategory))),"yes","no")
+
+
+ select if ((select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=5),"five",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=4),"four", (select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=2),"two",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=1),"one",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=0),"zero","no"))))))))))))) )=(select mod ((select category from page where docid='D001' and pageid='P001'),(select id5 from staticCategory))),"yes", 
+
+
+(select if ((select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='183'))),(select id5 from staticCategory)))=5),"five",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=4),"four", (select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=3),"three",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=2),"two",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=1),"one",(select if( ((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='E001'))),(select id5 from staticCategory)))=0),"zero","no"))))))))))))) )>(select mod ((select category from page where docid='D001' and pageid='P001'),(select id5 from staticCategory))),"yes","no")))
+
+
+(select if(((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='181'))),(select id5 from staticCategory)))=5),5,(select if(((select mod ((SELECT empcategory FROM fakeMacCategory where empdesig =((select empdesig from employee where empid='181'))),(select id5 from staticCategory)))=4),4,3))))
+ 
+

@@ -1,0 +1,83 @@
+ <project name="RA" basedir="../" default="project">
+
+    <!-- Change this to compile against a different version  -->
+    <property name="compile.classpath" value="compile.classpath_1_1"/>
+
+    <!-- Local system paths -->
+    <property name="servlet.jar" value="/javasoft/lib/jdbc2_0-stdext.jar"/>
+    <property name="jdbc20ext.jar" value="/javasoft/lib/servlet.jar"/>
+
+    <!-- Project settings -->
+    <property name="project.title" value="mySampleApp"/>
+ 
+    <property name="project.dist" value="mySampleApp"/>
+ 
+
+    <!-- classpath for Struts 1.1 -->
+    <path id="compile.classpath_1_1">
+    	<pathelement path ="classes"/>
+    	<pathelement path ="${classpath}"/>
+    	<pathelement path ="lib/commons-beanutils.jar"/>
+        <pathelement path ="lib/commons-digester.jar"/>
+        <pathelement path ="lib/struts_1_0_2.jar"/>
+        <pathelement path ="lib/servlet-api.jar"/>
+    	<pathelement path ="lib/poi-examples-3.8-20120326.jar"/>
+    	<pathelement path ="lib/poi-3.8-20120326.jar"/>
+    	<pathelement path ="lib/poi-excelant-3.8-20120326.jar"/>
+    	<pathelement path ="lib/poi-ooxml-3.8-20120326.jar"/>
+    	<pathelement path ="lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+    	<pathelement path ="lib/poi-scratchpad-3.8-20120326.jar"/>
+    	<pathelement path ="lib/commons-fileupload.jar"/>
+    	<pathelement path ="lib/opencsv-2.3.jar"/>
+
+
+
+    </path>
+
+
+    <!-- Check timestamp on files -->
+    <target name="prepare">
+        <tstamp/>
+    </target>
+
+
+   <!-- Copy any resource or configuration files -->
+    <target name="resources">
+        <copy todir="classes" includeEmptyDirs="no">
+            <fileset dir="src/java">
+            <patternset>
+                <include name="**/*.conf"/>
+                <include name="**/*.properties"/>
+                <include name="**/*.xml"/>
+            </patternset>
+            </fileset>
+        </copy>
+    </target>
+
+
+    <!-- Normal build of application -->
+    <target name="compile" depends="prepare,resources">
+        <!-- Remove "jikes" value if you must use javac instead -->
+        <property name="ant.build.javac.target" value="1.6"/>
+        <javac includeantruntime="false"  srcdir="src" destdir="classes">
+            <classpath refid="${compile.classpath}"/>
+        </javac>
+    </target>
+
+
+    <!-- Remove classes directory for clean build -->
+    <target name="clean"
+      description="Prepare for clean build">
+      <delete dir="classes"/>
+      <mkdir  dir="classes"/>
+    </target>
+
+
+   
+
+   
+
+    <!-- Build entire project -->
+    <target name="project" depends="clean,prepare,compile"/>
+
+</project>

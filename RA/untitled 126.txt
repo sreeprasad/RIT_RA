@@ -1,0 +1,61 @@
+Installation Instructions
+-------------------------
+
+1. To set the runtime environment download and install JDK 6, higher version should be all right. Please set environment JAVA_HOME and 
+   path variable as per installation guide of JDK.
+2. To set the Web Server download and Install Apache Tomcat 6. Please set environment variable CATALINA_HOME to tomcat home directory.
+3. To view the source code download Eclipse JAVA EE IDE or any Java EE IDE of your choice.
+4. We have supplied you with SecureDB.zip. Unzip the SecureDB file in you tomcat folder's webapps directory.
+ 
+Execution Instructions
+----------------------
+
+1.Unzip the SecureDB.zip to your tomcat/webapps/ folder  
+2.Run Apache 
+	2.a Go to Tomcat/bin/ folder 
+	2.b Run startup.bat in windows and ./startup.sh on MAC
+3.Run you SQL Sever by going to SQL Sever installation directory's bin folder and running the command
+	mysql -u root 
+4. Create a database SecureDB by the following command
+	create database SecureDB;
+5. Run the scripts present in the following order 
+
+5.a create user.txt
+5.b create table.txt
+5.c employee.sql
+5.d EMPLOYEEROLE.sql
+5.e dacaccessmatrix.sql
+5.f RBACROLE.sql
+5.g maccategory.sql
+5.h PAGE.sql
+
+6. Execute the application by typing the following URL on the browser : 
+	http://localhost:8080/SecureDB/
+	
+ 
+Credentials
+---------
+
+Admin:
+
+Admin : admin
+Password : PL<qaz!098
+
+
+Engineer:
+
+Username:E002
+Password:nvb234mnc
+
+Marketing :
+
+Username:E003
+Password:89df756jhfg67
+
+
+
+Username:E004
+Password:oit34hy84df8
+
+Username:E005
+Password:2234jhghj3
